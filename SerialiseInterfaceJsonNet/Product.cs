@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SerialiseInterfaceJsonNet
 {
-    public interface IProduct
+    class Product : IProduct
     {
-        int Id { get; set; }
-        decimal UnitPrice { get; set; }
+        public int Id { get; set; }
+        public decimal UnitPrice { get; set; }
 
     }
 }
