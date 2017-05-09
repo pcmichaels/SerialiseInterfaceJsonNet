@@ -11,11 +11,17 @@ namespace SerialiseInterfaceJsonNet
     {
         static void Main(string[] args)
         {
-            string json = SerialiseProduct();
+            IProduct product = new Product()
+            {
+                Id = 1,
+                UnitPrice = 12.3m
+            };
+
+            string json = SerialiseProduct(product);
             Console.WriteLine(json);
 
-            IProduct product = DeserialiseProduct(json);
-            Console.WriteLine(product.Id);
+            IProduct product2 = DeserialiseProduct(json);
+            Console.WriteLine(product2.Id);
             
             Console.ReadLine();
 
@@ -28,14 +34,8 @@ namespace SerialiseInterfaceJsonNet
             return product;
         }
 
-        private static string SerialiseProduct()
+        private static string SerialiseProduct(IProduct product)
         {
-            IProduct product = new Product()
-            {
-                Id = 1,
-                UnitPrice = 12.3m
-            };
-
             string json = JsonConvert.SerializeObject(product);
             return json;
         }
