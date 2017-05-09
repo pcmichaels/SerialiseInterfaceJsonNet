@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="IProduct.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

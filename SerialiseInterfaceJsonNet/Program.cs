@@ -29,7 +29,10 @@ namespace SerialiseInterfaceJsonNet
 
         private static IProduct DeserialiseProduct(string json)
         {
-            IProduct product = JsonConvert.DeserializeObject<IProduct>(json);
+            var settings = new JsonSerializerSettings();
+            settings.Converters.Add(new ProductConverter());
+
+            IProduct product = JsonConvert.DeserializeObject<IProduct>(json, settings);
 
             return product;
         }
